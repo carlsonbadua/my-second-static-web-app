@@ -2,13 +2,9 @@
   "trailingSlash": "auto",
   "routes": [
     {
-      "route": "/*",
+      "route": "/profile*",
       "allowedRoles": [ "authenticated" ]
     },
-    //{
-    //  "route": "/profile/*",
-    //  "allowedRoles": [ "authenticated" ]
-    //},
     {
       "route": "/admin/index.html",
       "allowedRoles": [ "administrator" ]
@@ -42,10 +38,6 @@
       "rewrite": "/.auth/login/github"
     },
     {
-      "route": "/.auth/login/aad",
-      "statusCode": 404
-    },
-    {
       "route": "/.auth/login/x",
       "statusCode": 404
     },
@@ -68,9 +60,18 @@
     "exclude": [ "/images/*.{png,jpg,gif}", "/css/*" ]
   },
   "responseOverrides": {
+    "400": {
+      "rewrite": "/invalid-invitation-error.html"
+    },
     "401": {
-      "redirect": "/.auth/login/github?post_login_redirect_uri=.referrer",
+      "redirect": "/login",
       "statusCode": 302
+    },
+    "403": {
+      "rewrite": "/custom-forbidden-page.html"
+    },
+    "404": {
+      "rewrite": "/404.html"
     }
   },
   "globalHeaders": {
