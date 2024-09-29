@@ -5,10 +5,10 @@
       "route": "/*",
       "allowedRoles": [ "authenticated" ]
     },
-    {
-      "route": "/profile/*",
-      "allowedRoles": [ "authenticated" ]
-    },
+    //{
+    //  "route": "/profile/*",
+    //  "allowedRoles": [ "authenticated" ]
+    //},
     {
       "route": "/admin/index.html",
       "allowedRoles": [ "administrator" ]
