@@ -6,7 +6,7 @@
       "allowedRoles": [ "authenticated" ]
     },
     {
-      "route": "/admin/index.html",
+      "route": "/admin*",
       "allowedRoles": [ "administrator" ]
     },
     {
@@ -64,7 +64,7 @@
       "rewrite": "/invalid-invitation-error.html"
     },
     "401": {
-      "redirect": "/login",
+      "redirect": "/.auth/login/github?post_login_redirect_uri=.referrer",
       "statusCode": 302
     },
     "403": {
