@@ -7,3 +7,13 @@
 Hello family, dito niyo masusubaybayan ang progress ko sa paggawa ng website 😛
 
 /<br />takaw ni marie, nang-uubos ng pagkain
+
+<p>Loading content from the API: <b id="name">...</b></p>
+
+
+<script>
+    (async function() {
+        const { text } = await( await fetch(`/api/message`)).json();
+        document.querySelector('#name').textContent = text;
+    }());
+</script>
