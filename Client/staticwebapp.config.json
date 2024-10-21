@@ -55,16 +55,6 @@
       "statusCode": 301
     }
   ],
-  {
-    "IsEncrypted": false,
-    "Values": {
-      "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-      "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-    },
-    "Host": {
-      "CORS": "*"
-    }
-  },
   "navigationFallback": {
       "rewrite": "index.html",
       "exclude": [ "/images/*.{png,jpg,gif}", "/css/*" ]
