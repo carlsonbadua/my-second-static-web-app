@@ -1,9 +1,14 @@
 {
   "profiles": {
-    "Api": {
+    "FunctionApp": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7071",
-      "launchBrowser": false
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:7154", // Ensure this is set correctly
+      "localHttpPort": 7154 // Make sure this is set correctly
     }
   }
+
 }

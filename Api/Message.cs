@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace MyFunctionApp
+namespace Api
 {
     public class Message
     {
