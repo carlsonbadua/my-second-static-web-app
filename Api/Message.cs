@@ -17,7 +17,7 @@ namespace Api
 
         [Function("Message")]
         public async Task<HttpResponseData> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
             FunctionContext executionContext)
         {
             _logger.LogInformation("API triggered.");
