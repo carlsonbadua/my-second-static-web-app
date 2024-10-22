@@ -8,6 +8,19 @@
       "sslPort": 44350
     }
   },
+  {
+    "profiles": {
+      "AzureFunctions": {
+        "commandName": "Project",
+        "commandLineArgs": "--port 7154",
+        "launchBrowser": true,
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "applicationUrl": "http://localhost:7154"
+      }
+    }
+  },
   "profiles": {
     "http": {
       "commandName": "Project",

@@ -1,4 +1,6 @@
 ï»¿@page "/"
+@using System.Net.Http
+@using System.Net.Http.Json
 @inject HttpClient Http
 
 
@@ -12,3 +14,24 @@ Hello family, dito niyo masusubaybayan ang progress ko sa paggawa ng website ðŸ˜
 <p>This is a test. One two, *beatbox</p>
 
 <br />
+
+<p>API Response: <strong>@apiResponse</strong></p>
+
+<button @onclick="CallApi">Call API</button>
+
+@code {
+    private string apiResponse = "Waiting for API response...";
+
+    private async Task CallApi()
+    {
+        try
+        {
+            // Call the API endpoint, assuming it's running locally
+            apiResponse = await Http.GetStringAsync("/api/message");
+        }
+        catch (Exception ex)
+        {
+            apiResponse = $"Error: {ex.Message}";
+        }
+    }
+}

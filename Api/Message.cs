@@ -1,22 +1,29 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 using System.Net;
+using System.Threading.Tasks;
 
-namespace Api
+namespace MyFunctionApp
 {
-    public static class Message
+    public class Message
     {
+        private readonly ILogger<Message> _logger;
+
+        public Message(ILogger<Message> loggers)
+        {
+            _logger = logger;
+        }
+
         [Function("Message")]
-        public static async Task<HttpResponseData> Run(
+        public async Task<HttpResponseData> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
             FunctionContext executionContext)
         {
-            var logger = executionContext.GetLogger("Message");
-            logger.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("API triggered.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
             await response.WriteStringAsync("Hello, this is a call from the API");
 
             return response;
