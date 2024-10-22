@@ -23,6 +23,7 @@ namespace Api
             _logger.LogInformation("API triggered.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
+
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
             await response.WriteStringAsync("Hello, this is a call from the API");
 
