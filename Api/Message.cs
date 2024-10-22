@@ -12,7 +12,7 @@ namespace Api
 
         public Message(ILogger<Message> loggers)
         {
-            _logger = logger;
+            _logger = loggers;
         }
 
         [Function("Message")]

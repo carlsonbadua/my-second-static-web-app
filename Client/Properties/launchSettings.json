@@ -8,20 +8,16 @@
       "sslPort": 44350
     }
   },
-  {
-    "profiles": {
-      "AzureFunctions": {
-        "commandName": "Project",
-        "commandLineArgs": "--port 7071",
-        "launchBrowser": true,
-        "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
-        },
-        "applicationUrl": "http://localhost:7071"
-      }
-    }
-  },
   "profiles": {
+    "AzureFunctions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7154",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:7154"
+    },
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
@@ -37,7 +33,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
-      "applicationUrl": "https://localhost:7071;http://localhost:5000",
+      "applicationUrl": "https://localhost:7154;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
