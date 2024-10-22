@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+  },
+  "Host": {
+    "LocalHttpPort": 7154, // Port for running the local HTTP server
+    "CORS": "*", // Allows CORS from any origin (useful for local dev)
+    "CORSCredentials": true // Enable CORS with credentials
+  }
+}
